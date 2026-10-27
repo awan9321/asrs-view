@@ -61,7 +61,7 @@ def resample_to_hourly(df):
     if not pd.api.types.is_datetime64_any_dtype(df2.index):
         raise ValueError("Index bukan datetime.")
     # If there are multiple numeric columns, compute mean per hour
-    hourly = df2.resample('H').mean()
+    hourly = df2.resample('h').mean()
     return hourly
 
 def compute_hourly_profile(hourly_df, start_date, end_date, selected_cols, hour_min=6, hour_max=18):
